@@ -15,7 +15,7 @@ const Settings = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:1000/api/v1/get-user-information", { headers });
+        const response = await axios.get("https://vercel-backend-omega-nine.vercel.app/api/v1/get-user-information", { headers });
         setProfileData(response.data);
         setValue({ address: response.data.address });
       } catch (error) {
@@ -30,7 +30,7 @@ const Settings = () => {
   const handleUpdate = async () => {
     try {
       setIsLoading(true);
-      await axios.put("http://localhost:1000/api/v1/update-address", 
+      await axios.put("https://vercel-backend-omega-nine.vercel.app/api/v1/update-address", 
         { address: value.address }, 
         { headers }
       );
