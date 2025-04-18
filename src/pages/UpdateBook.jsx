@@ -38,7 +38,7 @@ const UpdateBook = () => {
 
     try {
       const response = await axios.put(
-        "http://localhost:1000/api/v1/update-book",
+        "https://vercel-backend-omega-nine.vercel.app/api/v1/update-book",
         Data,
         { headers }
       );
