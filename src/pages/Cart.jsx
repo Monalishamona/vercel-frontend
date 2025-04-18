@@ -44,7 +44,7 @@ const Cart = () => {
   const PlaceOrder = async () => {
     try {
       const response = await axios.post(
-        `https://vercel-frontend-iota-eosin.vercel.app/api/v1/place-order`,
+        `https://vercel-backend-omega-nine.vercel.app/api/v1/place-order`,
         { order: cart },
         { headers }
       );
