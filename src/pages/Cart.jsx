@@ -16,7 +16,7 @@ const Cart = () => {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:1000/api/v1/get-user-cart", { headers });
+      const res = await axios.get("https://vercel-backend-omega-nine.vercel.app/api/v1/get-user-cart", { headers });
       const cartData = res.data.data || [];
       setCart(cartData);
       setTotal(cartData.reduce((sum, item) => sum + (item.price || 0), 0));
@@ -32,7 +32,7 @@ const Cart = () => {
 
   const deleteItem = async (bookId) => {
     try {
-      await axios.put(`http://localhost:1000/api/v1/remove-from-cart/${bookId}`, {}, { headers });
+      await axios.put(`https://vercel-backend-omega-nine.vercel.app/api/v1/remove-from-cart/${bookId}`, {}, { headers });
       const removedItem = cart.find(item => item._id === bookId);
       setCart(prev => prev.filter(item => item._id !== bookId));
       setTotal(prev => prev - (removedItem?.price || 0));
